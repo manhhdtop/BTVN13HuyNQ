@@ -4,14 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import vn.topica.itlab4.bean.User;
-import vn.topica.itlab4.jwt.JwtToken;
 import vn.topica.itlab4.util.Utils;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Optional;
 
 @Controller
 public class HomeController
@@ -38,21 +35,36 @@ public class HomeController
 	public String account(Model model, HttpServletRequest request)
 	{
 		System.out.println("Account");
-		getModel(model, request, "Account information");
-		
-		return "account";
+		User user = Utils.checkToken(request.getCookies());
+		if (user == null)
+		{
+			return "redirect:/";
+		}
+		else
+		{
+			getModel(model, request, "Account information");
+			return "account";
+		}
 	}
 	
 	@RequestMapping(value = {"/account/**"})
 	public String accountAction(Model model, HttpServletRequest request) throws MalformedURLException
 	{
 		System.out.println("Account action");
-		URL url = new URL(request.getRequestURL().toString());
-		String path = url.getPath();
-		path = path.substring(path.lastIndexOf("/") + 1);
-		getModel(model, request, "Account information");
-		model.addAttribute("path", path);
-		return "account";
+		User user = Utils.checkToken(request.getCookies());
+		if (user == null)
+		{
+			return "redirect:/";
+		}
+		else
+		{
+			URL url = new URL(request.getRequestURL().toString());
+			String path = url.getPath();
+			path = path.substring(path.lastIndexOf("/") + 1);
+			getModel(model, request, "Account information");
+			model.addAttribute("path", path);
+			return "account";
+		}
 	}
 	
 	@RequestMapping(value = {"/contact"})

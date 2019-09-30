@@ -134,8 +134,8 @@
 						</h3>
 						<form>
 							<div class="form-group">
-								<label for="username">Username</label>
-								<input class="form-control" id="username"
+								<label>Username</label>
+								<input class="form-control"
 								       value="${user.username}" readonly>
 								<small class="text-danger"></small>
 							</div>

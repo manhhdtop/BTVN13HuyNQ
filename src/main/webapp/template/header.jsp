@@ -28,7 +28,7 @@
 								<a href="account/change-password">Change password</a>
 							</li>
 							<li>
-								<a id="logout" href="#">Logout</a>
+								<a id="logout-button" href="#">Logout</a>
 							</li>
 						</ul>
 					</div>

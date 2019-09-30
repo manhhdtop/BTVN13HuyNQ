@@ -86,7 +86,7 @@ $(window).on('load', function () {
         e.preventDefault();
         if (validateLogin()) {
             $(this).prop("disabled", true).removeClass('btn-primary').addClass('btn-disabled');
-            $.post("login", {
+            $.post("/login", {
                     username: $('#username').val().trim(),
                     password: $('#password').val().trim()
                 },
@@ -94,13 +94,13 @@ $(window).on('load', function () {
                     data = JSON.parse(data);
                     console.log(data);
                     if (data.code === 200) {
-                        $('#message').html(data.message).parent().addClass('alert alert-success')
+                        $('#message-login').html(data.message).parent().addClass('alert alert-success')
                             .removeClass('alert-danger');
                         Cookies.set('token', data.datas.token);
-                        countDown($('#message'), 3, data.message + ' Page reload after' +
+                        countDown($('#message-login'), 3, data.message + ' Page reload after' +
                             ' {0}s');
                     } else {
-                        $('#message').html(data.message).parent().addClass('alert alert-danger')
+                        $('#message-login').html(data.message).parent().addClass('alert alert-danger')
                             .removeClass('alert-success');
                     }
                 });
@@ -208,9 +208,14 @@ $(window).on('load', function () {
     /*------------------
         Logout
     --------------------*/
+    $('#logout-button').click(function (e) {
+        e.preventDefault();
+        $('#logout-modal').modal('toggle');
+    });
+
     $('#logout').click(function (e) {
         e.preventDefault();
-        $.post("logout", {
+        $.post("/logout", {
             token: Cookies.get('token')
         }, function (data) {
             console.log(data);
@@ -231,7 +236,7 @@ $(window).on('load', function () {
         if (validateSignUp()) {
             $('#message-signup').html('').parent().removeClass('alert alert-success alert-danger');
             $(this).prop("disabled", true).removeClass('btn-primary').addClass('btn-disabled');
-            $.post("signup", {
+            $.post("/signup", {
                     username: $('#username-signup').val().trim(),
                     password: $('#password-signup').val().trim()
                 },
