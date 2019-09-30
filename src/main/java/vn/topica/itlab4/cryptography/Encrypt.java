@@ -1,5 +1,7 @@
 package vn.topica.itlab4.cryptography;
 
+import vn.topica.itlab4.util.Constant;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.security.NoSuchAlgorithmException;
@@ -16,6 +18,11 @@ public class Encrypt
 	private static final int ITERATIONS = 10000;
 	private static final int KEY_LENGTH = 256;
 	private static final String ENCRYPT_TYPE = "PBKDF2WithHmacSHA1";
+	
+	public static String getSalt()
+	{
+		return getSalt(Constant.FILE_NAME_LENGTH);
+	}
 	
 	public static String getSalt(int length)
 	{

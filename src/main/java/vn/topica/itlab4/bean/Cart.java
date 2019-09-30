@@ -1,16 +1,29 @@
 package vn.topica.itlab4.bean;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "cart")
 public class Cart
 {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
+	@OneToOne
+	@JoinColumn(name = "user_id")
 	private User user;
+	@OneToOne
+	@JoinColumn(name = "cart_id")
 	private List<Product> products;
+	@Column(name = "price")
 	private long totalPrice;
+	@Column(name = "created")
 	private Date created;
+	@Column(name = "updated")
 	private Date updated;
 	
 	public Cart()

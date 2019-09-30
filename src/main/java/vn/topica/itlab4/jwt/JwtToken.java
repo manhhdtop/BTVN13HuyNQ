@@ -7,19 +7,19 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import vn.topica.itlab4.bean.User;
-import vn.topica.itlab4.util.Constant;
-import vn.topica.itlab4.util.ExtensionUtil;
+import vn.topica.itlab4.model.UserModel;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Optional;
 
 public class JwtToken
 {
 	private static Algorithm algorithm = Algorithm.HMAC256("secret");
+	private static String attr = "username";
 	
 	public static String createJWT(String username)
 	{
@@ -29,15 +29,13 @@ public class JwtToken
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
 			LocalDate localDate = DateTimeFormatter.ofPattern(dateFormat)
 					.parse(simpleDateFormat.format(new Date()), LocalDate::from);
-			Date expired = Date
-					.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-			String token = JWT.create().withIssuer("issuer").withIssuedAt(new Date())
-					.withExpiresAt(expired).withClaim("username", username).sign(algorithm);
-			int index = token.indexOf(".") + Constant.TOKEN_RANDOM_LENGTH;
-			token = token.substring(0, index)
-					+ ExtensionUtil.randomString(Constant.TOKEN_RANDOM_LENGTH)
-					+ token.substring(index);
-			return token;
+			Date expired = new Date();
+			Calendar c = Calendar.getInstance();
+			c.setTime(expired);
+			c.add(Calendar.DATE, 7);
+			expired = c.getTime();
+			return JWT.create().withIssuer("issuer").withIssuedAt(new Date())
+					.withExpiresAt(expired).withClaim(attr, username).sign(algorithm);
 		}
 		catch (JWTCreationException e)
 		{
@@ -50,20 +48,18 @@ public class JwtToken
 	{
 		try
 		{
-			int index = token.indexOf(".");
-			token = token.substring(0, index)
-					+ token.substring(index + Constant.TOKEN_RANDOM_LENGTH);
 			JWTVerifier verifier = JWT.require(algorithm).withIssuer("issuer").build();
 			JWT.require(algorithm).acceptExpiresAt(0);
 			verifier.verify(token);
 			
 			DecodedJWT decode = JWT.decode(token);
-			String username = decode.getClaim("username").asString();
-			
-			return Optional.of(new User());
+			String username = decode.getClaim(attr).asString();
+			System.out.println(username);
+			return Optional.of(UserModel.getUser(username));
 		}
 		catch (JWTVerificationException | NullPointerException e)
 		{
+			System.err.println(e.getMessage());
 			return Optional.empty();
 		}
 	}

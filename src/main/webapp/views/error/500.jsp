@@ -3,12 +3,12 @@
 	<head>
 		<title>Student Management by Takatori</title>
 		<meta charset="utf-8">
-		<link rel="icon" type="image/x-icon"
-		      href="icon/favicon.png">
+		<link rel="/icon" type="image/x-icon"
+		      href="/icon/favicon.png">
 		<link rel="stylesheet" type="text/css"
-		      href="css/bootstrap.min.css"/>
+		      href="/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css"
-		      href="css/style.css">
+		      href="/css/style.css">
 	</head>
 	<body>
 		<section class="page_error">

@@ -7,18 +7,18 @@
 		<meta name="keywords" content="plaza, eCommerce, creative,.jsp">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Favicon -->
-		<link href="icon/favicon.png" rel="shortcut icon"/>
+		<link href="/icon/favicon.png" rel="shortcut icon"/>
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i"
 		      rel="stylesheet">
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/owl.carousel.css"/>
-		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="css/animate.css"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="/css/owl.carousel.css"/>
+		<link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/animate.css"/>
 
 
 		<!--[if lt IE 9]>
@@ -87,18 +87,18 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-8 col-sm-12">
 						<div class="footer-widget about-widget">
-							<img src="img/logo.png" class="footer-logo"
+							<img src="/img/logo.png" class="footer-logo"
 							     alt="">
 							<p>Donec vitae purus nunc. Morbi faucibus erat sit
 								amet congue mattis. Nullam fringilla faucibus
 								urna, id dapibus erat iaculis ut. Integer ac
 								sem.</p>
 							<div class="cards">
-								<img src="img/cards/5.png" alt="">
-								<img src="img/cards/4.png" alt="">
-								<img src="img/cards/3.png" alt="">
-								<img src="img/cards/2.png" alt="">
-								<img src="img/cards/1.png" alt="">
+								<img src="/img/cards/5.png" alt="">
+								<img src="/img/cards/4.png" alt="">
+								<img src="/img/cards/3.png" alt="">
+								<img src="/img/cards/2.png" alt="">
+								<img src="/img/cards/1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -208,18 +208,18 @@
 		<jsp:include page="/template/modal.jsp"/>
 
 		<!--====== Javascripts & Jquery ======-->
-		<script src="js/jquery.3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/mixitup.min.js"></script>
-		<script src="js/sly.min.js"></script>
-		<script src="js/jquery-cookie.js"></script>
-		<script src="js/jquery.nicescroll.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="/js/jquery.3.2.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/owl.carousel.min.js"></script>
+		<script src="/js/mixitup.min.js"></script>
+		<script src="/js/sly.min.js"></script>
+		<script src="/js/jquery-cookie.js"></script>
+		<script src="/js/jquery.nicescroll.min.js"></script>
+		<script src="/js/main.js"></script>
 
 		<!-- Map js -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWTIlluowDL-X4HbYQt3aDw_oi2JP0Krc&sensor=false"></script>
-		<script src="js/map.js"></script>
+		<script src="/js/map.js"></script>
 
 	</body>
 	<.jsp>

@@ -8,51 +8,45 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Favicon -->
-		<link href="icon/favicon.png" rel="shortcut icon"/>
+		<link href="/icon/favicon.png" rel="shortcut icon" />
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i"
 		      rel="stylesheet">
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/owl.carousel.css"/>
-		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="css/animate.css"/>
-
-		<script>
-            addEventListener("load", function () {
-                setTimeout(hideURLbar, 0);
-            }, false);
-
-            function hideURLbar() {
-                window.scrollTo(0, 1);
-            }
-		</script>
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/css/owl.carousel.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/animate.css" />
 
 	</head>
 	<body>
+		<jsp:useBean id="date" class="java.util.Date" />
 		<!-- Page Preloder -->
 		<div id="preloder">
 			<div class="loader"></div>
 		</div>
 
 		<%-- Header--%>
-		<jsp:include page="/template/header.jsp"/>
+		<jsp:include page="/template/header.jsp" />
 
 		<!-- Hero section -->
-		<section class="hero-section set-bg" data-setbg="img/bg.jpg">
+		<section class="hero-section set-bg" data-setbg="/img/bg.jpg">
 			<div class="hero-slider owl-carousel">
 				<div class="hs-item">
 					<div class="hs-left">
-						<img src="img/slider-img.png" alt="">
+						<img src="/img/slider-img.png" alt="">
 					</div>
 					<div class="hs-right">
 						<div class="hs-content">
 							<div class="price">from $19.90</div>
 							<h2>
-								<span>2018</span>
+								<span>
+									<fmt:formatDate value="${date}"
+									                pattern="yyyy" />
+								</span>
 								<br>summer collection
 							</h2>
 							<a href="#" class="site-btn">Shop NOW!</a>
@@ -61,13 +55,16 @@
 				</div>
 				<div class="hs-item">
 					<div class="hs-left">
-						<img src="img/slider-img-1.png" alt="">
+						<img src="/img/slider-img-1.png" alt="">
 					</div>
 					<div class="hs-right">
 						<div class="hs-content">
 							<div class="price">from $19.90</div>
 							<h2>
-								<span>2018</span>
+								<span>
+									<fmt:formatDate value="${date}"
+									                pattern="yyyy" />
+								</span>
 								<br>summer collection
 							</h2>
 							<a href="#" class="site-btn">Shop NOW!</a>
@@ -90,7 +87,7 @@
 					<li>
 						<div class="intro-item">
 							<figure>
-								<img src="img/intro/1.jpg" alt="#">
+								<img src="/img/intro/1.jpg" alt="#">
 							</figure>
 							<div class="product-info">
 								<h5>Pink Sunglasses</h5>
@@ -105,7 +102,7 @@
 					<li>
 						<div class="intro-item">
 							<figure>
-								<img src="img/intro/2.jpg" alt="#">
+								<img src="/img/intro/2.jpg" alt="#">
 							</figure>
 							<div class="product-info">
 								<h5>Black Nighty</h5>
@@ -120,7 +117,7 @@
 					<li>
 						<div class="intro-item">
 							<figure>
-								<img src="img/intro/3.jpg" alt="#">
+								<img src="/img/intro/3.jpg" alt="#">
 								<div class="bache">NEW</div>
 							</figure>
 							<div class="product-info">
@@ -136,7 +133,7 @@
 					<li>
 						<div class="intro-item">
 							<figure>
-								<img src="img/intro/4.jpg" alt="#">
+								<img src="/img/intro/4.jpg" alt="#">
 							</figure>
 							<div class="product-info">
 								<h5>Yellow Sunglasses</h5>
@@ -151,7 +148,7 @@
 					<li>
 						<div class="intro-item">
 							<figure>
-								<img src="img/intro/5.jpg" alt="#">
+								<img src="/img/intro/5.jpg" alt="#">
 							</figure>
 							<div class="product-info">
 								<h5>Black Sholder bag</h5>
@@ -182,14 +179,14 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="featured-item">
-							<img src="img/featured/featured-1.jpg"
+							<img src="/img/featured/featured-1.jpg"
 							     alt="">
 							<a href="#" class="site-btn">see more</a>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="featured-item mb-0">
-							<img src="img/featured/featured-2.jpg"
+							<img src="/img/featured/featured-2.jpg"
 							     alt="">
 							<a href="#" class="site-btn">see more</a>
 						</div>
@@ -212,17 +209,17 @@
 					<div class="mix col-lg-3 col-md-6 best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/1.jpg"
+								<img src="/img/products/1.jpg"
 								     alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
 										<img
-												src="img/icons/heart.png"
+												src="/img/icons/heart.png"
 												alt="">
 										<p>save</p>
 									</div>
@@ -241,18 +238,18 @@
 					<div class="mix col-lg-3 col-md-6 new">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/2.jpg"
+								<img src="/img/products/2.jpg"
 								     alt="">
 								<div class="bache">NEW</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
 										<img
-												src="img/icons/heart.png"
+												src="/img/icons/heart.png"
 												alt="">
 										<p>save</p>
 									</div>
@@ -271,17 +268,17 @@
 					<div class="mix col-lg-3 col-md-6 best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/3.jpg"
+								<img src="/img/products/3.jpg"
 								     alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
 										<img
-												src="img/icons/heart.png"
+												src="/img/icons/heart.png"
 												alt="">
 										<p>save</p>
 									</div>
@@ -300,18 +297,18 @@
 					<div class="mix col-lg-3 col-md-6 new best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/4.jpg"
+								<img src="/img/products/4.jpg"
 								     alt="">
 								<div class="bache sale">SALE</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
 										<img
-												src="img/icons/heart.png"
+												src="/img/icons/heart.png"
 												alt="">
 										<p>save</p>
 									</div>
@@ -332,16 +329,16 @@
 					<div class="mix col-lg-3 col-md-6 best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/5.jpg"
+								<img src="/img/products/5.jpg"
 								     alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png" alt="">
+										<img src="/img/icons/heart.png" alt="">
 										<p>save</p>
 									</div>
 								</div>
@@ -359,17 +356,17 @@
 					<div class="mix col-lg-3 col-md-6 new">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/6.jpg"
+								<img src="/img/products/6.jpg"
 								     alt="">
 								<div class="bache">NEW</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png" alt="">
+										<img src="/img/icons/heart.png" alt="">
 										<p>save</p>
 									</div>
 								</div>
@@ -387,15 +384,15 @@
 					<div class="mix col-lg-3 col-md-6 best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/7.jpg"
+								<img src="/img/products/7.jpg"
 								     alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png" alt="">
+										<img src="/img/icons/eye.png" alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png" alt="">
+										<img src="/img/icons/heart.png" alt="">
 										<p>save</p>
 									</div>
 								</div>
@@ -413,16 +410,16 @@
 					<div class="mix col-lg-3 col-md-6 best">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/8.jpg"
+								<img src="/img/products/8.jpg"
 								     alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png" alt="">
+										<img src="/img/icons/heart.png" alt="">
 										<p>save</p>
 									</div>
 								</div>
@@ -451,7 +448,7 @@
 				<div class="row">
 					<div class="col-lg-5">
 						<div class="featured-item">
-							<img src="img/featured/featured-3.jpg"
+							<img src="/img/featured/featured-3.jpg"
 							     alt="">
 							<a href="#" class="site-btn">see more</a>
 						</div>
@@ -460,7 +457,7 @@
 						<h4 class="bgs-title">from the blog</h4>
 						<div class="blog-item">
 							<div class="bi-thumb">
-								<img src="img/blog-thumb/1.jpg"
+								<img src="/img/blog-thumb/1.jpg"
 								     alt="">
 							</div>
 							<div class="bi-content">
@@ -473,7 +470,7 @@
 						</div>
 						<div class="blog-item">
 							<div class="bi-thumb">
-								<img src="img/blog-thumb/2.jpg"
+								<img src="/img/blog-thumb/2.jpg"
 								     alt="">
 							</div>
 							<div class="bi-content">
@@ -486,7 +483,7 @@
 						</div>
 						<div class="blog-item">
 							<div class="bi-thumb">
-								<img src="img/blog-thumb/3.jpg"
+								<img src="/img/blog-thumb/3.jpg"
 								     alt="">
 							</div>
 							<div class="bi-content">
@@ -510,18 +507,18 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-8 col-sm-12">
 						<div class="footer-widget about-widget">
-							<img src="img/logo.png"
+							<img src="/img/logo.png"
 							     class="footer-logo" alt="">
 							<p>Donec vitae purus nunc. Morbi faucibus erat sit
 								amet congue mattis. Nullam fringilla faucibus
 								urna, id dapibus erat iaculis ut. Integer ac
 								sem.</p>
 							<div class="cards">
-								<img src="img/cards/5.png" alt="">
-								<img src="img/cards/4.png" alt="">
-								<img src="img/cards/3.png" alt="">
-								<img src="img/cards/2.png" alt="">
-								<img src="img/cards/1.png" alt="">
+								<img src="/img/cards/5.png" alt="">
+								<img src="/img/cards/4.png" alt="">
+								<img src="/img/cards/3.png" alt="">
+								<img src="/img/cards/2.png" alt="">
+								<img src="/img/cards/1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -616,8 +613,7 @@
 			<div class="container">
 				<p class="copyright">
 					Copyright &copy;
-					<jsp:useBean id="date" class="java.util.Date"/>
-					<fmt:formatDate value="${date}" pattern="yyyy"/>
+					<fmt:formatDate value="${date}" pattern="yyyy" />
 					All rights reserved
 				</p>
 			</div>
@@ -625,16 +621,28 @@
 		<!-- Footer section end -->
 
 		<%--		Modal--%>
-		<jsp:include page="/template/modal.jsp"/>
+		<jsp:include page="/template/modal.jsp" />
+
+		<script>
+            var user;
+            if ('${user}' !== '') {
+                user = {
+                    id: '${user.id}',
+                    username: '${user.username}',
+                    name: '${user.name}',
+                };
+            }
+		</script>
 
 		<!--====== Javascripts & Jquery ======-->
-		<script src="js/jquery.3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/mixitup.min.js"></script>
-		<script src="js/sly.min.js"></script>
-		<script src="js/jquery-cookie.js"></script>
-		<script src="js/jquery.nicescroll.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="/js/jquery.3.2.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/owl.carousel.min.js"></script>
+		<script src="/js/mixitup.min.js"></script>
+		<script src="/js/sly.min.js"></script>
+		<script src="/js/jquery-cookie.js"></script>
+		<script src="/js/jquery.nicescroll.min.js"></script>
+		<script src="/js/jquery.showLoading.min.js"></script>
+		<script src="/js/main.js"></script>
 	</body>
 </html>

@@ -34,6 +34,9 @@
 						       placeholder="********">
 						<small class="text-danger"></small>
 					</div>
+					<div>
+						<label id="message"></label>
+					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -87,6 +90,9 @@
 						       type="password" class="form-control"
 						       placeholder="********">
 						<small class="text-danger"></small>
+					</div>
+					<div>
+						<label id="message-signup"></label>
 					</div>
 				</form>
 			</div>

@@ -7,18 +7,18 @@
 		<meta name="keywords" content="plaza, eCommerce, creative,.jsp">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Favicon -->
-		<link href="icon/favicon.png" rel="shortcut icon"/>
+		<link href="/icon/favicon.png" rel="shortcut icon"/>
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i"
 		      rel="stylesheet">
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/owl.carousel.css"/>
-		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="css/animate.css"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="/css/owl.carousel.css"/>
+		<link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/animate.css"/>
 
 
 		<!--[if lt IE 9]>
@@ -45,7 +45,7 @@
 					/
 					<span>Dresses</span>
 				</div>
-				<img src="img/categorie-page-top.png" alt=""
+				<img src="/img/categorie-page-top.png" alt=""
 				     class="cata-top-pic">
 			</div>
 		</div>
@@ -60,10 +60,10 @@
 					<div class="cf-right">
 						<div class="cf-layouts">
 							<a href="#">
-								<img src="img/icons/layout-1.png" alt="">
+								<img src="/img/icons/layout-1.png" alt="">
 							</a>
 							<a class="active" href="#">
-								<img src="img/icons/layout-2.png" alt="">
+								<img src="/img/icons/layout-2.png" alt="">
 							</a>
 						</div>
 						<form action="#">
@@ -83,15 +83,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/1.jpg" alt="">
+								<img src="/img/products/1.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -109,16 +109,16 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/2.jpg" alt="">
+								<img src="/img/products/2.jpg" alt="">
 								<div class="bache">NEW</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -136,15 +136,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/3.jpg" alt="">
+								<img src="/img/products/3.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -162,16 +162,16 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/4.jpg" alt="">
+								<img src="/img/products/4.jpg" alt="">
 								<div class="bache sale">SALE</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -191,15 +191,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/5.jpg" alt="">
+								<img src="/img/products/5.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -217,16 +217,16 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/6.jpg" alt="">
+								<img src="/img/products/6.jpg" alt="">
 								<div class="bache">NEW</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -244,15 +244,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/7.jpg" alt="">
+								<img src="/img/products/7.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -270,15 +270,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/8.jpg" alt="">
+								<img src="/img/products/8.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -298,15 +298,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/9.jpg" alt="">
+								<img src="/img/products/9.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -324,16 +324,16 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/10.jpg" alt="">
+								<img src="/img/products/10.jpg" alt="">
 								<div class="bache">NEW</div>
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -351,15 +351,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/11.jpg" alt="">
+								<img src="/img/products/11.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -377,15 +377,15 @@
 					<div class="col-lg-3">
 						<div class="product-item">
 							<figure>
-								<img src="img/products/12.jpg" alt="">
+								<img src="/img/products/12.jpg" alt="">
 								<div class="pi-meta">
 									<div class="pi-m-left">
-										<img src="img/icons/eye.png"
+										<img src="/img/icons/eye.png"
 										     alt="">
 										<p>quick view</p>
 									</div>
 									<div class="pi-m-right">
-										<img src="img/icons/heart.png"
+										<img src="/img/icons/heart.png"
 										     alt="">
 										<p>save</p>
 									</div>
@@ -422,18 +422,18 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-8 col-sm-12">
 						<div class="footer-widget about-widget">
-							<img src="img/logo.png" class="footer-logo"
+							<img src="/img/logo.png" class="footer-logo"
 							     alt="">
 							<p>Donec vitae purus nunc. Morbi faucibus erat sit
 								amet congue mattis. Nullam fringilla faucibus
 								urna, id dapibus erat iaculis ut. Integer ac
 								sem.</p>
 							<div class="cards">
-								<img src="img/cards/5.png" alt="">
-								<img src="img/cards/4.png" alt="">
-								<img src="img/cards/3.png" alt="">
-								<img src="img/cards/2.png" alt="">
-								<img src="img/cards/1.png" alt="">
+								<img src="/img/cards/5.png" alt="">
+								<img src="/img/cards/4.png" alt="">
+								<img src="/img/cards/3.png" alt="">
+								<img src="/img/cards/2.png" alt="">
+								<img src="/img/cards/1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -543,13 +543,13 @@
 		<jsp:include page="/template/modal.jsp"/>
 
 		<!--====== Javascripts & Jquery ======-->
-		<script src="js/jquery.3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/mixitup.min.js"></script>
-		<script src="js/sly.min.js"></script>
-		<script src="js/jquery-cookie.js"></script>
-		<script src="js/jquery.nicescroll.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="/js/jquery.3.2.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/owl.carousel.min.js"></script>
+		<script src="/js/mixitup.min.js"></script>
+		<script src="/js/sly.min.js"></script>
+		<script src="/js/jquery-cookie.js"></script>
+		<script src="/js/jquery.nicescroll.min.js"></script>
+		<script src="/js/main.js"></script>
 	</body>
 	<.jsp>

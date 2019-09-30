@@ -1,16 +1,14 @@
 package vn.topica.itlab4.bean;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class User
 {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	@Column(name = "username")
@@ -19,6 +17,8 @@ public class User
 	private String password;
 	@Column(name = "salt")
 	private String salt;
+	@Column(name = "name")
+	private String name;
 	
 	public User()
 	{
@@ -26,14 +26,16 @@ public class User
 		this.username = "";
 		this.password = "";
 		this.salt = "";
+		this.name = "";
 	}
 	
-	public User(int id, String username, String password, String salt)
+	public User(int id, String username, String password, String salt, String name)
 	{
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.salt = salt;
+		this.name = name;
 	}
 	
 	public int getId()
@@ -74,6 +76,16 @@ public class User
 	public void setSalt(String salt)
 	{
 		this.salt = salt;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
 	}
 	
 	@Override
