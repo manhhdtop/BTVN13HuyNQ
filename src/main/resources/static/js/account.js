@@ -57,9 +57,8 @@ $(window).on('load', function () {
                     if (data.code === 200) {
                         $('#message').html(data.message).parent().addClass('alert alert-success')
                             .removeClass('alert-danger');
-                        Cookies.set('token', data.datas.token);
-                        countDown($('#message'), 3, data.message + ' Page reload after' +
-                            ' {0}s');
+                        Cookies.set('token', data.datas.token, {expires: 7});
+
                     } else {
                         $('#message').html(data.message).parent().addClass('alert alert-danger')
                             .removeClass('alert-success');

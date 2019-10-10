@@ -1,20 +1,31 @@
 package vn.topica.itlab4.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import vn.topica.itlab4.bean.User;
 import vn.topica.itlab4.cryptography.Encrypt;
 import vn.topica.itlab4.model.UserModel;
 import vn.topica.itlab4.util.Constant;
 
+@Service
 public class AuthService
 {
-	public static boolean checkUsername(String username)
+	@Autowired
+	private UserModel model;
+	
+	public User findUser(String username)
 	{
-		return UserModel.getUser(username) != null;
+		return model.findByUsername(username);
 	}
 	
-	public static int checkLogin(String username, String password)
+	public boolean checkUsername(String username)
 	{
-		User user = UserModel.getUser(username);
+		return model.findByUsername(username) != null;
+	}
+	
+	public int checkLogin(String username, String password)
+	{
+		User user = model.findByUsername(username);
 		if (user == null)
 		{
 			return Constant.USER_NOT_FOUND;

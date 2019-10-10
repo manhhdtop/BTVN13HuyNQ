@@ -3,6 +3,11 @@ package vn.topica.itlab4.util;
 public class Constant
 {
 	// Check login code
+	public static final int ROLE_USER = 0;
+	public static final int ROLE_ADMIN = 1;
+	public static final int ROLE_STAFF = 2;
+	
+	// Check login code
 	public static final int LOGIN_SUCCESS = 1;
 	public static final int USER_NOT_FOUND = 0;
 	public static final int LOGIN_FAILD = -1;
@@ -25,6 +30,7 @@ public class Constant
 	public static final String MESSAGE_USER_EXIST = "Username is existed.";
 	public static final String MESSAGE_LOGIN_FAILD = "Username or password " +
 			"not correct.";
+	public static final String MESSAGE_NAME_REQUIRE = "Name is required.";
 	public static final String MESSAGE_USERNAME_REQUIRE = "Username is required.";
 	public static final String MESSAGE_PASSWORD_REQUIRE = "Password is required.";
 	public static final String MESSAGE_USERNAME_NOT_VALID = "Username is " +
@@ -48,7 +54,12 @@ public class Constant
 	public static final String INSERT_USERS = "INSERT INTO User(username, " +
 			"password, salt) VALUES(:username, :password, :salt)";
 	
-	// Cart table
-	public static final String SELECT_Cart = "FROM Cart WHERE " +
+	// Product table
+	public static final String SELECT_PRODUCT = "FROM Product WHERE " +
 			"username=:username";
+	public static final String SELECT_PRODUCT_BY_NAME = "FROM Product WHERE " +
+			"username=:username";
+	public static final String SELECT_PRODUCT_BY_ID = "FROM Product WHERE " +
+			"id=:id";
+	public static final int PAGE_SIZE = 10;
 }

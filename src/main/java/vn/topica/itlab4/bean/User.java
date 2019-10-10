@@ -4,7 +4,7 @@ package vn.topica.itlab4.bean;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "jpa_user")
 public class User
 {
 	@Id
@@ -19,6 +19,8 @@ public class User
 	private String salt;
 	@Column(name = "name")
 	private String name;
+	@Column(name = "role")
+	private int role;
 	
 	public User()
 	{
@@ -27,15 +29,17 @@ public class User
 		this.password = "";
 		this.salt = "";
 		this.name = "";
+		this.role = 0;
 	}
 	
-	public User(int id, String username, String password, String salt, String name)
+	public User(int id, String username, String password, String salt, String name, int role)
 	{
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.salt = salt;
 		this.name = name;
+		this.role = role;
 	}
 	
 	public int getId()
@@ -88,9 +92,19 @@ public class User
 		this.name = name;
 	}
 	
+	public int getRole()
+	{
+		return role;
+	}
+	
+	public void setRole(int role)
+	{
+		this.role = role;
+	}
+	
 	@Override
 	public String toString()
 	{
-		return "User[Username: " + username + "]";
+		return "User[Username: " + username + "; Role=" + role + "]";
 	}
 }

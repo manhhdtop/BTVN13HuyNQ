@@ -15,6 +15,13 @@ public class ErrorPagesController
 		return "/error/404";
 	}
 	
+	@RequestMapping("/backend/406")
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public String notFound1()
+	{
+		return "error/406";
+	}
+	
 	@RequestMapping("/403")
 	@ResponseStatus(HttpStatus.FORBIDDEN)
 	public String forbidden()

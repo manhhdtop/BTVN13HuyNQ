@@ -147,10 +147,6 @@ a, a:hover {
 	vertical-align: middle;
 }
 
-.page_error_item a:hover {
-	border: 1px solid #0056b3;
-}
-
 .error {
 	color: #DC3545;
 	font-size: 7rem;

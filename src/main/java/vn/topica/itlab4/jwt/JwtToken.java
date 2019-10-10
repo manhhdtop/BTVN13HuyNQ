@@ -6,8 +6,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import vn.topica.itlab4.bean.User;
-import vn.topica.itlab4.model.UserModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import vn.topica.itlab4.controller.AuthService;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -18,6 +18,9 @@ import java.util.Optional;
 
 public class JwtToken
 {
+	@Autowired
+	private AuthService authService;
+	
 	private static Algorithm algorithm = Algorithm.HMAC256("secret");
 	private static String attr = "username";
 	
@@ -44,7 +47,7 @@ public class JwtToken
 		return null;
 	}
 	
-	public static Optional<User> decodeJWT(String token)
+	public static Optional<String> decodeJWT(String token)
 	{
 		try
 		{
@@ -54,8 +57,7 @@ public class JwtToken
 			
 			DecodedJWT decode = JWT.decode(token);
 			String username = decode.getClaim(attr).asString();
-			System.out.println(username);
-			return Optional.of(UserModel.getUser(username));
+			return Optional.of(username);
 		}
 		catch (JWTVerificationException | NullPointerException e)
 		{

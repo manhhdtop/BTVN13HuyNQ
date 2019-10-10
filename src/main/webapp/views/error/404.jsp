@@ -22,7 +22,7 @@
 								Error, your page request may be not found or
 								method not accepted.
 							</div>
-							<a href="/" class="btn btn-link">Back to Homepage.
+							<a href="/" class="text-primary">Back to Homepage.
 							</a>
 						</div>
 					</div>

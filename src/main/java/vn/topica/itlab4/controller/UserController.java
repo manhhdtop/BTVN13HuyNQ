@@ -1,8 +1,9 @@
 package vn.topica.itlab4.controller;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import vn.topica.itlab4.bean.ApiPacket;
@@ -10,7 +11,6 @@ import vn.topica.itlab4.bean.Data;
 import vn.topica.itlab4.bean.User;
 import vn.topica.itlab4.cryptography.Encrypt;
 import vn.topica.itlab4.jwt.JwtToken;
-import vn.topica.itlab4.model.Factory;
 import vn.topica.itlab4.model.UserModel;
 import vn.topica.itlab4.util.Constant;
 import vn.topica.itlab4.util.Utils;
@@ -20,17 +20,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/api/user/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController
 {
-	private static Session session;
+	@Autowired
+	private UserModel model;
 	
-	static
-	{
-		SessionFactory factory = Factory.getInstance();
-		session = factory.getCurrentSession();
-	}
+	@Autowired
+	private AuthService authService;
 	
-	@PostMapping(value = {"/login"})
+	@PostMapping(value = {"login"})
 	public String login(@RequestParam(name = "username", required = false) String username,
 			@RequestParam(name = "password", required = false) String password)
 	{
@@ -56,7 +55,7 @@ public class UserController
 		{
 			Data d = null;
 			int code;
-			switch (AuthService.checkLogin(username, password))
+			switch (authService.checkLogin(username, password))
 			{
 				case Constant.LOGIN_SUCCESS:
 					message = method + Constant.MESSAGE_SUCCESS;
@@ -84,8 +83,9 @@ public class UserController
 		return Utils.packetToJson(packet);
 	}
 	
-	@PostMapping(value = {"/signup"})
-	public String signUp(@RequestParam(name = "username", required = false) String username,
+	@PostMapping(value = {"register"})
+	public String signUp(@RequestParam(name = "name", required = false) String name,
+			@RequestParam(name = "username", required = false) String username,
 			@RequestParam(name = "password", required = false) String password)
 	{
 		ApiPacket packet;
@@ -93,9 +93,13 @@ public class UserController
 		String message;
 		int code;
 		List<String> errors = null;
-		if (username == null || password == null)
+		if (name == null || username == null || password == null)
 		{
 			errors = new ArrayList<>();
+			if (name == null)
+			{
+				errors.add(Constant.MESSAGE_NAME_REQUIRE);
+			}
 			if (username == null)
 			{
 				errors.add(Constant.MESSAGE_USERNAME_REQUIRE);
@@ -110,7 +114,7 @@ public class UserController
 		}
 		else
 		{
-			if (AuthService.checkUsername(username))
+			if (authService.checkUsername(username))
 			{
 				message = Constant.MESSAGE_USER_EXIST;
 				packet = Utils.getPacket(method, Constant.CODE_USER_EXIST,
@@ -138,7 +142,7 @@ public class UserController
 				{
 					User u = new User();
 					u.setUsername(username);
-					u.setName(username);
+					u.setName(name);
 					u.setSalt(Encrypt.getSalt());
 					u.setPassword(Encrypt.generateSecurePassword(password,
 							u.getSalt()));
@@ -146,7 +150,7 @@ public class UserController
 					String token = JwtToken.createJWT(username);
 					Data d = new Data();
 					d.setToken(token);
-					int result = UserModel.addUser(u);
+					User result = model.save(u);
 					message = method + Constant.MESSAGE_SUCCESS;
 					
 					packet = Utils.getPacket(method, Constant.CODE_SUCCESS,
@@ -166,7 +170,8 @@ public class UserController
 		String message;
 		int code;
 		
-		User user = Utils.checkToken(request.getCookies());
+		String username = Utils.checkToken(request.getCookies());
+		User user = authService.findUser(username);
 		if (user == null)
 		{
 			message = Constant.MESSAGE_TOKEN_NOT_VALID;
@@ -182,7 +187,7 @@ public class UserController
 		return Utils.packetToJson(packet);
 	}
 	
-	@PostMapping(value = {"/change-password"})
+	@PostMapping(value = {"change-password"})
 	public String logout(HttpServletRequest request,
 			@RequestParam(name = "password", required = false) String password)
 	{
@@ -192,7 +197,8 @@ public class UserController
 		String message;
 		int code;
 		Data data = null;
-		User user = Utils.checkToken(request.getCookies());
+		String username = Utils.checkToken(request.getCookies());
+		User user = authService.findUser(username);
 		if (user == null)
 		{
 			message = Constant.MESSAGE_TOKEN_NOT_VALID;
@@ -212,7 +218,7 @@ public class UserController
 				user.setSalt(Encrypt.getSalt());
 				user.setPassword(Encrypt.generateSecurePassword(password,
 						user.getSalt()));
-				UserModel.updateUser(user);
+				model.update(user);
 				String t = JwtToken.createJWT(user.getUsername());
 				data = new Data();
 				data.setToken(t);

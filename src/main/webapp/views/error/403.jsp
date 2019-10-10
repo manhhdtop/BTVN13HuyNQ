@@ -24,7 +24,7 @@
 								The requested URL by the client is Forbidden
 								for unknown reason.
 							</div>
-							<a href="/" class="btn btn-link">Back to Homepage.
+							<a href="/" class="text-primary">Back to Homepage.
 							</a>
 						</div>
 					</div>

@@ -1,27 +1,30 @@
 package vn.topica.itlab4.bean;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 @Entity
-@Table(name = "cart")
+@Table(name = "jpa_product")
 public class Product
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private int id;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "description")
 	private String description;
-	//	@Column(name = "price")
-	private long price;
-	//	@Column(name = "image")
+	@Column(name = "price")
+	private double price;
+	@Column(name = "image")
 	private String image;
+	@ManyToOne
+	@JoinColumn(name = "category_id")
 	private Category category;
-	private List<Tag> tags;
+	@Column(name = "created")
+	private Date created;
+	@Column(name = "updated")
+	private Date updated;
 	
 	public Product()
 	{
@@ -29,19 +32,20 @@ public class Product
 		this.name = "";
 		this.description = "";
 		this.price = 0;
-		this.tags = new ArrayList<>();
 		this.category = null;
+		this.created = new Date();
+		this.updated = new Date();
 	}
 	
-	public Product(int id, String name, String description, long price,
-			Category category, List<Tag> tags)
+	public Product(String name, String description, double price, String image, Category category, Date created, Date updated)
 	{
-		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.image = image;
 		this.category = category;
-		this.tags = tags;
+		this.created = created;
+		this.updated = updated;
 	}
 	
 	public int getId()
@@ -74,14 +78,29 @@ public class Product
 		this.description = description;
 	}
 	
-	public long getPrice()
+	public double getPrice()
 	{
 		return price;
 	}
 	
-	public void setPrice(long price)
+	public void setPrice(double price)
 	{
 		this.price = price;
+	}
+	
+	public void setPrice(String price)
+	{
+		this.price = Double.parseDouble(price);
+	}
+	
+	public String getImage()
+	{
+		return image;
+	}
+	
+	public void setImage(String image)
+	{
+		this.image = image;
 	}
 	
 	public Category getCategory()
@@ -94,13 +113,23 @@ public class Product
 		this.category = category;
 	}
 	
-	public List<Tag> getTags()
+	public Date getCreated()
 	{
-		return tags;
+		return created;
 	}
 	
-	public void setTags(List<Tag> tags)
+	public void setCreated(Date created)
 	{
-		this.tags = tags;
+		this.created = created;
+	}
+	
+	public Date getUpdated()
+	{
+		return updated;
+	}
+	
+	public void setUpdated(Date updated)
+	{
+		this.updated = updated;
 	}
 }

@@ -3,7 +3,6 @@ package vn.topica.itlab4.util;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.StringUtils;
 import vn.topica.itlab4.bean.ApiPacket;
-import vn.topica.itlab4.bean.User;
 import vn.topica.itlab4.cryptography.Encrypt;
 import vn.topica.itlab4.jwt.JwtToken;
 
@@ -73,24 +72,25 @@ public class Utils
 		return s;
 	}
 	
-	public static User checkToken(Cookie[] cookies)
+	public static String checkToken(Cookie[] cookies)
 	{
-		User user = null;
+		String username = null;
 		if (cookies != null)
 		{
 			for (Cookie c : cookies)
 			{
 				if (c.getName().equalsIgnoreCase("token"))
 				{
-					Optional<User> optional = JwtToken.decodeJWT(c.getValue());
+					Optional<String> optional =
+							JwtToken.decodeJWT(c.getValue());
 					if (optional.isPresent())
 					{
-						user = optional.get();
+						username = optional.get();
 					}
 					break;
 				}
 			}
 		}
-		return user;
+		return username;
 	}
 }

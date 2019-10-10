@@ -20,7 +20,7 @@
 							<div class="mb-4 lead">Internal Server Error<br/>
 								Your request is currently unable to handle.
 							</div>
-							<a href="/" class="btn btn-link">Back to
+							<a href="/" class="text-primary">Back to
 								Homepage.
 							</a>
 						</div>
